@@ -1,18 +1,18 @@
 package eea
 
 type ExtendedEuclidianRow struct {
-	A int
-	B int
-	Q int
-	S int
-	T int
+	A int64
+	B int64
+	Q int64
+	S int64
+	T int64
 }
 
 type ExtendedEuclidianParameters struct {
-	A int `env:"A"`
-	B int `env:"B"`
-	S int
-	T int
+	A int64 `env:"A"`
+	B int64 `env:"B"`
+	S int64
+	T int64
 }
 
 func (parameters *ExtendedEuclidianParameters) Calculate() []*ExtendedEuclidianRow {
@@ -30,7 +30,7 @@ func (parameters *ExtendedEuclidianParameters) Calculate() []*ExtendedEuclidianR
 		count++
 	}
 
-	// build simple pointer array for the calculated values
+	// build simple point64er array for the calculated values
 	values := make([]*ExtendedEuclidianRow, count+1)
 
 	for i := range values {
